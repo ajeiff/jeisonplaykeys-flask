@@ -1,10 +1,12 @@
 from flask import Blueprint, render_template
+from mapper.mapping_manager import ListMusicSoundcloud
 
 views = Blueprint('views', __name__)
 
-@views.route("/")
+@views.route("/", methods=['GET'])
 def home():
-    return render_template("home.html")
+    data = ListMusicSoundcloud("https://kymuvqgv84.execute-api.eu-west-3.amazonaws.com/api/")
+    return render_template("home.html", data=data.getlistmetadatasongdict())
 
 @views.route("/about")
 def about():
