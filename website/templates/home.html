@@ -1,4 +1,13 @@
 {% extends "base.html" %} {% block title %}Jeisonplaykeys{% endblock title %}
 {% block content %}
-{{ data }}
+<figure>
+    <figcaption>Listen to the T-Rex:</figcaption>
+    <audio
+        controls
+        src={{data[0]['file']}}>
+            Your browser does not support the
+            <code>audio</code> element.
+    </audio>
+</figure>
+
 {% endblock %}

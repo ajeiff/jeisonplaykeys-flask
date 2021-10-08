@@ -30,4 +30,4 @@ class ListMusicSoundcloud():
 if __name__ == '__main__':
     data = ListMusicSoundcloud("https://kymuvqgv84.execute-api.eu-west-3.amazonaws.com/api/")
     result = data.getlistmetadatasongdict()
-    print(result)
+    result[0]['file']
